@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Extreme Honeymoons - Graphics</title>
+
+<style>
+
+	body {
+		text-align: center;
+		margin-left:auto; 
+		margin-right:auto;
+	}
+
+	#thumbs, #image {
+		width: 900px;
+		text-align: center;
+		margin: 0 auto 0 auto;
+		color: #000;
+	}
+
+	#thumbs {
+		margin-top: 10px;
+	}
+
+			
+	#thumbs img {
+		border: solid 1px #000;
+		margin: 5px;
+	}
+
+	#image{
+		height:500px;
+	}
+
+	.instructions{
+		font-style:italic;
+	}
+
+</style>
+
+<script>
+
+	PrintButton1 = new Image
+	PrintButton2 = new Image
+	logo1 = new Image
+	logo2 = new Image
+if (document.images) {
+	PrintButton1.src = "images/print5.gif"
+	PrintButton2.src = "images/print6.gif"
+	logo1.src = "images/logo1.jpg"
+	logo2.src = "images/logo2.jpg"
+}
+
+
+		var imgArray = new Array(
+			'image1lg.jpg',
+			'image2lg.jpg',
+			'image3lg.jpg',
+			'image4lg.jpg'
+			
+
+		);
+
+
+		var titleArray = new Array(
+			'Couple on Bike',
+			'Couple Sitting under Sunset',
+			'Couple on Motorcycle',
+			'Couple Holding Eachother'
+			
+		);
+		
+		function swapImage(imgID) {
+
+			var theImage = document.getElementById('theImage');
+			var textDiv = document.getElementById('bottomText');
+
+			var newImg;
+			var textTitle;
+
+			newImg = imgArray[imgID];
+			theImage.src = newImg;
+
+			textTitle=titleArray[imgID];
+
+      			textDiv.innerHTML = textTitle;
+		}
+			
+		function preloadImages() {		
+			for(var i = 0; i < imgArray.length; i++) {
+				var tmpImg = new Image;
+				tmpImg.src = imgPath + imgArray[i];
+			}
+		}
+		
+
+</script>
+
+
+</head>
+<body  onload="preloadImages()">
+
+<div>
+
+<div>
+	<a href="" onmouseover="document.getElementById('print').src='print-hover.png';" onmouseout="document.getElementById('print').src='print.png';">
+	<img src="print.png" alt="Print Page" width="200" height="50" id="print"></a>
+</div>
+
+<div>
+	<a href="" onmouseover="document.getElementById('logo').src='logo-hover.png';" onmouseout="document.getElementById('logo').src='logo.png';">
+	<img src="logo.png" alt="Logo" id="logo"></a>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+
+<div id="thumbs">
+		<img src="image1sm.jpg" alt="Couple on Bike" onmouseover="swapImage(0);">
+		<img src="image2sm.jpg" alt="Couple Sitting under Sunset" onmouseover="swapImage(1);">
+		<img src="image3sm.jpg" alt="Couple on Motorcycle" onmouseover="swapImage(2);">
+		<img src="image4sm.jpg" alt="Couple Holding Eachother" onmouseover="swapImage(3);">
+		
+</div>
+
+	<div id="image">
+
+		<img id="theImage" src="image1lg.jpg" alt="Dog doing trick">
+		<h3 id="bottomText">Couple on Bike</h3>
+	</div>
+
+<img src="2colback.jpg" alt="background">
+
+<br>
+<br>
+<br>
+<br>
+
+
+
+</div>
+
+<p>
+    <a href="http://validator.w3.org/check?uri=referer"><img
+      src="http://www.w3.org/Icons/valid-xhtml10" alt="Valid XHTML 1.0 Transitional" height="31" width="88"></a>
+</p>
+  
+
+</body>
+</html>
